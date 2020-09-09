@@ -1,0 +1,6 @@
+framework module Pods_InTableView_InTableViewUITests {
+  umbrella header "Pods-InTableView-InTableViewUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
