@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 struct dataHolder {
     let name:String!
@@ -28,14 +29,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
            
             switch response.result {
             case .success(let value):
+                //SwiftyJson
+//               let json = JSON(value)
+//               for (_, object) in json {
+//                let name = object["name"].stringValue
+//                let email = object["email"].stringValue
+//                let dataHold = dataHolder(name: name, email: email)
+//                self.tableData.append(dataHold)
+//                DispatchQueue.main.async {
+//                    self.commentsTableView.reloadData()
+//                }
+//
+//               }
                 if let fullData = value as? [[String:Any]] {
                     print(fullData, "Actual")
                     fullData.forEach({ (key) in
                         let name = key["name"] as? String
                         let email = key["email"] as? String
-                       
+
                         let dataHold = dataHolder(name: name, email: email)
-                       
+
                         self.tableData.append(dataHold)
                     })
                     DispatchQueue.main.async {

@@ -7,7 +7,8 @@ target 'InTableView' do
 
   # Pods for InTableView
   
-   pod 'Alamofire'
+   pod 'Alamofire', '~> 5.2'
+   pod 'SwiftyJSON', '~> 4.0'
 
   target 'InTableViewTests' do
     inherit! :search_paths
